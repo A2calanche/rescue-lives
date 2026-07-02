@@ -19,9 +19,12 @@ yarn-error.log*
 
 # environment variables (NEVER upload these)
 .env
+env/
+venv/
 .env.production
 .venv.development
 .venv.production
+.venv/
 .venv
 # IDE
 .vscode/
