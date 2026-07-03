@@ -116,7 +116,7 @@ Aplicación principal de RescueNet:
 
 ## API
 
-### GET `/api/health/`
+### GET `/api/v1/health/`
 
 Verifica que el servicio esté disponible.
 
@@ -131,7 +131,7 @@ Verifica que el servicio esté disponible.
 
 ---
 
-### POST `/api/reports/`
+### POST `/api/v1/reports/`
 
 Crea un nuevo reporte de una persona afectada junto con su ubicación.
 
@@ -165,7 +165,7 @@ Crea un nuevo reporte de una persona afectada junto con su ubicación.
 
 ---
 
-### GET `/api/locations/nearby/`
+### GET `/api/v1/locations/nearby/`
 
 Obtiene un listado de las ubicaciones registradas.
 
@@ -206,5 +206,5 @@ DATABASE_URL=
 - Configurar variables de entorno para producción.
 
 ### Notas
-- `POST /api/reports/` está exento de protección CSRF (pensado para consumo API vía curl/cliente externo).
+- `POST /api/v1/reports/` está exento de protección CSRF (pensado para consumo API vía curl/cliente externo).
   Pendiente: definir estrategia de autenticación antes de producción.

@@ -1,4 +1,7 @@
+import json
+
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
 from .models import AffectedPerson, LocationReport
@@ -10,9 +13,10 @@ def health_check(request):
     return JsonResponse({"status": "ok", "app": "rescue"})
 
 
+@csrf_exempt
 @require_http_methods(["POST"])
 def create_report(request):
-    payload = request.POST or request.json
+    payload = request.POST or json.loads(request.body or "{}")
     if not payload:
         return JsonResponse({"error": "Payload vacío"}, status=400)
 
