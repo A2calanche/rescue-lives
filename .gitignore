@@ -45,3 +45,5 @@ package-lock.json
 # logs
 logs/
 *.log
+
+**/__pycache__/
