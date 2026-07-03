@@ -8,7 +8,7 @@ Permite registrar reportes de personas afectadas, consultar ubicaciones reportad
 
 ## Requisitos
 
-- Python: **Definir versión del equipo** (pendiente de confirmar)
+- Python: **3+**
 - Django: **6.0.6**
 
 ---
@@ -48,10 +48,9 @@ Instalar Django:
 pip install django
 ```
 
-> **Nota:** El archivo `requirements.txt` aún no existe. Una vez instalado Django, generarlo con:
-
+> **Nota:** El archivo `requirements.txt` contiene todas las dependencias, instalarlo con el siguiente comando
 ```bash
-pip freeze > requirements.txt
+pip install -r requirements.txt
 ```
 
 ---
