@@ -6,6 +6,7 @@ from django.views.decorators.http import require_http_methods
 
 from .models import AffectedPerson, LocationReport
 from .services import create_person_report
+from .auth import require_api_key
 
 
 @require_http_methods(["GET"])
@@ -13,7 +14,9 @@ def health_check(request):
     return JsonResponse({"status": "ok", "app": "rescue"})
 
 
+
 @csrf_exempt
+@require_api_key
 @require_http_methods(["POST"])
 def create_report(request):
     payload = request.POST or json.loads(request.body or "{}")
